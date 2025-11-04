@@ -1,0 +1,30 @@
+@import "tailwindcss";
+
+/* Theme: permite usar variáveis CSS dentro do Tailwind */
+@theme { 
+  /* Neutral colors */ 
+  --color-neutral-white: #FFFFFF;
+  --color-neutral-gray: #4c5964;
+  --color-neutral-green: #79f8ec;
+   /* Primary colors */ 
+  --color-primary-green: #0FBA55;
+  --color-primary-yellow: #FFB60C;
+  --color-primary-blue: #1E73BE;
+  --color-primary-purple: #BD00CE;
+   /* Secondary colors */
+  --color-secondary-green: #00ee91;
+  /* Tertiary colors */
+  --color-tertiary-green: #42fff8;
+}
+
+@layer base {
+  * {
+    
+  }
+}
+
+body {
+  background-color: var(--color-secondary-green);
+  margin: 0;
+  padding: 0;
+}
