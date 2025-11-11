@@ -1,7 +1,7 @@
 
 export default function Container({ children }) {
   return (
-    <div className="flex justify-center items-center">
+    <div className="flex flex-col justify-center items-center bg-secondary-green">
       {children}
     </div>
   );

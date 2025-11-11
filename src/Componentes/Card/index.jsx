@@ -4,7 +4,7 @@ const Card = ({ children, color }) => {
        color === 2 ? "bg-primary-blue" : "bg-primary-purple";
                      
   return (
-    <div className={`m-6 rounded-3xl ${bg}`}> 
+    <div className={`${bg}`}> 
       {children}
     </div>
   )
@@ -20,7 +20,7 @@ export const CardHeader = ({ children }) => {
 
 export const CardBody = ({ children }) => {
   return (
-    <div className="grid grid-cols-3 gap-3 p-6 justify-items-center"> 
+    <div className="grid grid-cols-3 gap-5 p-6 justify-items-center"> 
       {children}
     </div>
   )

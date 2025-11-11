@@ -19,7 +19,6 @@ export default function Slide({ n, h1, h2, p, isActive }) {
       h2={h2}
       p={p}
       isActive={isActive}
-      
     />
   );
 }
