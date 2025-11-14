@@ -26,6 +26,6 @@ export const Gemini = () => <img src="icons/gemini.png"/>
 
 export const Youtube = () => <img src="icons/youtube.png"/>
 
-export const Add = () => <img src="icons/add.png"/>
+export const Add = ({className}) => <img src="icons/add.png" className={className}/>
 
 export const Plans = () => <img src="icons/plans.png"/>

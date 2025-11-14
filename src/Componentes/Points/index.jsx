@@ -1,5 +1,6 @@
 import background from '../../assets/Imagens/points.png';
 import Pontos from './Pontos';
+import Notes from './Notes';
 
 export default function Points() {
   return (
@@ -10,6 +11,8 @@ export default function Points() {
         Anotações e Pontos
       </h1>
       <Pontos/>
+      <Notes/>
+      
       <img src={background}/>
     </div>
     
