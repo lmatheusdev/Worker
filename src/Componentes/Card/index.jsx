@@ -12,7 +12,7 @@ const Card = ({ children, color }) => {
 
 export const CardHeader = ({ children }) => {
   return (
-    <div className="text-center text-2xl font-bold text-neutral-white"> 
+    <div className="text-center text-2xl font-bold text-neutral-white p-4"> 
       {children}
     </div>
   )

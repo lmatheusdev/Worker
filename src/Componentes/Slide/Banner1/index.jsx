@@ -28,7 +28,7 @@ export default function Banner1({ isActive }) {
         initial="hidden"
         animate={isActive ? "visible" : "hidden"}
       >
-        <h1>Worker</h1>
+        Worker
       </motion.h1>
 
       <motion.h2
@@ -41,7 +41,7 @@ export default function Banner1({ isActive }) {
         animate={isActive ? "visible" : "hidden"}
         custom={0.2}
       >
-        <h2>Seu assistente de trabalho</h2>
+        Seu assistente de trabalho
       </motion.h2>
 
       <motion.p
@@ -54,7 +54,7 @@ export default function Banner1({ isActive }) {
         animate={isActive ? "visible" : "hidden"}
         custom={0.4}
       >
-        <p>Todos os links e funcionalidades que você precisa em um só lugar</p>
+        Todos os links e funcionalidades que você precisa em um só lugar
       </motion.p>
 
       <img

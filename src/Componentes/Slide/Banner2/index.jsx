@@ -28,7 +28,7 @@ export default function Banner2({ isActive }) {
         initial="hidden"
         animate={isActive ? "visible" : "hidden"}
       >
-        <h1>Worker</h1>
+        Worker
       </motion.h1>
 
       <motion.h2
@@ -40,7 +40,7 @@ export default function Banner2({ isActive }) {
         animate={isActive ? "visible" : "hidden"}
         custom={0.2}
       >
-        <h2>A produtividade que você merece</h2>
+        A produtividade que você merece
       </motion.h2>
 
        <motion.h2
@@ -52,7 +52,7 @@ export default function Banner2({ isActive }) {
         animate={isActive ? "visible" : "hidden"}
         custom={0.2}
       >
-        <h2>Organize suas tarefas e facilite seu dia a dia!</h2>
+        Organize suas tarefas e facilite seu dia a dia!
       </motion.h2>
 
        <motion.h2
@@ -64,7 +64,7 @@ export default function Banner2({ isActive }) {
         animate={isActive ? "visible" : "hidden"}
         custom={0.2}
       >
-        <h2>Seu tempo vale muito mais</h2>
+        Seu tempo vale muito mais
       </motion.h2>
 
       <motion.p
@@ -74,7 +74,7 @@ export default function Banner2({ isActive }) {
         animate={isActive ? "visible" : "hidden"}
         custom={0.4}
       >
-        <p>*essa página ainda está em desenvolvimento</p>
+        *essa página ainda está em desenvolvimento
       </motion.p>
 
       <img
