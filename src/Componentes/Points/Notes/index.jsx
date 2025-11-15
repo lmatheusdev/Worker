@@ -48,10 +48,10 @@ export default function Notes() {
 
       {modalAberta && (
         <div className="fixed inset-0 backdrop-blur-xs flex items-center justify-center">
-          <div className="bg-[#a4367f] text-white p-3 rounded-xl w-[300px] shadow-xl">
+          <div className="bg-[#a4367f] text-white p-3 rounded-xl w-[350px] shadow-xl">
             <h2 className="text-2xl font-bold mb-2 text-center">Nota</h2>
             <textarea
-              className="w-full h-26 p-2 bg-[#520e38] rounded-xl resize-none outline-none shadow-lg"
+              className="w-full h-36 p-2 bg-[#520e38] rounded-xl resize-none outline-none shadow-lg"
               maxLength={150}
               value={texto}
               onChange={(e) => setTexto(e.target.value)}
