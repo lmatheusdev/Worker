@@ -28,4 +28,8 @@ export const Youtube = () => <img src="icons/youtube.png"/>
 
 export const Add = ({className}) => <img src="icons/add.png" className={className}/>
 
+export const Del = ({className}) => <img src="icons/del.png" className={className}/>
+
+export const Options = ({className}) => <img src="icons/options.png" className={className}/>
+
 export const Plans = () => <img src="icons/plans.png"/>

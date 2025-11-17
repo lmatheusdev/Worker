@@ -1,9 +1,43 @@
 import { useEffect, useState } from "react";
 export default function Notes() {
-  const [notas, setNotas] = useState(["", "", "", "", ""]);
+
+  const [notas, setNotas] = useState([]);
   const [modalAberta, setModalAberta] = useState(false);
   const [texto, setTexto] = useState("");
   const [linhaSelecionada, setLinhaSelecionada] = useState(null);
+
+
+  useEffect(() => { 
+    const notasSalvas = localStorage.getItem("notas");
+    console.log(notasSalvas);
+    if (notasSalvas) {
+      setNotas(JSON.parse(notasSalvas));
+    }
+  },[]);
+
+  useEffect(() => { 
+    if (notas.length > 0) {
+      localStorage.setItem("notas", JSON.stringify(notas));
+    }
+  }, [notas]);
+
+  // Evita o scroll do body quando a modal está aberta.
+  useEffect(() => {
+    if (modalAberta) document.body.style.overflow = "hidden";
+    else document.body.style.overflow = "auto";
+  }, [modalAberta]);
+
+  useEffect(()=>{
+      if (modalAberta === false) return;
+      const handleKeyDown = (e) => {
+        if (e.key === "Escape") {
+          setModalAberta(false);
+        }
+      };
+      window.addEventListener('keydown', handleKeyDown);
+      return () => window.removeEventListener('keydown', handleKeyDown);
+  },[modalAberta]);
+  
 
   const abrirModal = (index) => {
   setLinhaSelecionada(index);
@@ -11,11 +45,7 @@ export default function Notes() {
   setModalAberta(true);
   };
 
-  // Evita o scroll do body quando a modal está aberta.
-  useEffect(() => {
-    if (modalAberta) document.body.style.overflow = "hidden";
-    else document.body.style.overflow = "auto";
-  }, [modalAberta]);
+ 
 
   const salvarNota = () => {
   const novasNotas = [...notas];
@@ -47,8 +77,14 @@ export default function Notes() {
 
 
       {modalAberta && (
-        <div className="fixed inset-0 backdrop-blur-xs flex items-center justify-center">
-          <div className="bg-[#a4367f] text-white p-3 rounded-xl w-[350px] shadow-xl">
+        <div 
+            className="fixed inset-0 backdrop-blur-xs flex items-center justify-center"
+            onClick={() => setModalAberta(false)}
+        >
+          <div 
+            className="bg-[#a4367f] text-white p-3 rounded-xl w-[350px] shadow-xl"
+            onClick={(e) => e.stopPropagation()}
+          >
             <h2 className="text-2xl font-bold mb-2 text-center">Nota</h2>
             <textarea
               className="w-full h-36 p-2 bg-[#520e38] rounded-xl resize-none outline-none shadow-lg"
