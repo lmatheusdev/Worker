@@ -54,8 +54,8 @@ export default function Notes() {
   setModalAberta(false);
   };
   return (
-    <div className="absolute left-[101px] top-[172px]">
-      <div className="bg-[#370020] w-[440px] h-[395px] rounded-3xl text-neutral-white p-6">
+    <div className="w-30%">
+      <div className="bg-dark-purple  rounded-3xl text-neutral-white p-10">
         <h2 className="text-4xl font-bold mb-10 text-center">
           Notas
         </h2>
@@ -64,10 +64,10 @@ export default function Notes() {
           <li
             key={i}
             onClick={() => abrirModal(i)}
-            className="border-b border-gray-300 pb-0.5 cursor-pointer hover:opacity-80 transition-all 
-              duration-300 ease-in-out mb-5"
+            className="border-b border-neutral-white pb-0.5 cursor-pointer hover:opacity-80 transition-all 
+              duration-300 ease-in-out mb-10"
           >
-            <span className="text-2xl truncate block max-w-full">
+            <span className="text-2xl truncate block max-w-full ">
               {nota ? `${i + 1}. ${nota}` : `${i + 1}.`}
             </span>
           </li>
@@ -82,12 +82,12 @@ export default function Notes() {
             onClick={() => setModalAberta(false)}
         >
           <div 
-            className="bg-[#a4367f] text-white p-3 rounded-xl w-[350px] shadow-xl"
+            className="bg-secondary-purple text-white p-3 rounded-xl w-[350px] shadow-xl"
             onClick={(e) => e.stopPropagation()}
           >
             <h2 className="text-2xl font-bold mb-2 text-center">Nota</h2>
             <textarea
-              className="w-full h-36 p-2 bg-[#520e38] rounded-xl resize-none outline-none shadow-lg"
+              className="w-full h-36 p-2 bg-tertiary-purple rounded-xl resize-none outline-none shadow-lg"
               maxLength={150}
               value={texto}
               onChange={(e) => setTexto(e.target.value)}
@@ -97,7 +97,7 @@ export default function Notes() {
             <div className="flex justify-end">
               <button
                 onClick={salvarNota}
-                className="px-4 py-1 rounded-xl bg-[#370020] text-white hover:bg-[#520e38] transition-all 
+                className="px-4 py-1 rounded-xl bg-dark-purple text-neutral-white hover:bg-tertiary-purple transition-all 
                 duration-300 ease-in-out mt-2"
               >
                 Salvar

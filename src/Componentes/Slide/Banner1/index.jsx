@@ -22,7 +22,7 @@ export default function Banner1({ isActive }) {
       <motion.h1
         className="
           absolute text-[64px] font-bold
-          top-[71px] left-1/2 -translate-x-1/2 -translate-y-1/2
+          top-1/5 left-1/2 -translate-x-1/2 -translate-y-1/2
         "
         variants={textVariants}
         initial="hidden"
@@ -34,7 +34,7 @@ export default function Banner1({ isActive }) {
       <motion.h2
         className="
           absolute text-[64px]
-          top-[181px] left-[132px] -translate-y-1/2
+          top-1/2 left-1/10 -translate-y-1/2 
         "
         variants={textVariants}
         initial="hidden"
@@ -47,7 +47,7 @@ export default function Banner1({ isActive }) {
       <motion.p
         className="
           absolute text-[24px]
-          top-[301px] left-[95px] -translate-y-1/2
+          bottom-1/8 left-1/14 -translate-y-1/2
         "
         variants={textVariants}
         initial="hidden"

@@ -71,8 +71,9 @@ function aoZerar() {
   }
   
   return (
-    <div className="bg-[#370020] w-[440px] h-[395px] rounded-3xl absolute right-[101px] top-[172px] text-neutral-white p-6">
-      <header className="flex mb-10 items-center">
+    <div className="bg-dark-purple rounded-3xl text-neutral-white p-10 flex flex-col">
+
+      <header className="flex mb-10 items-center relative">
         <h2 className="text-4xl font-bold grow text-center ml-8">
           Seus Pontos
         </h2>
@@ -82,17 +83,17 @@ function aoZerar() {
         >
           <Options/>
         </span>
-        <div className="absolute right-6 top-16 bg-white text-black rounded-xl shadow-lg z-10 overflow-hidden">
+        <div className="absolute right-0 top-12 bg-neutral-white text-neutral-black rounded-xl shadow-lg z-10 overflow-hidden">
           {dropdownOpen && (
               <ul className="flex flex-col items-center p-2">
                 <li
                   onClick={() => aoAlterarDiasTrabalhados()}
-                  className=" cursor-pointer hover:bg-gray-200">
+                  className=" cursor-pointer hover:bg-neutral-gray">
                     Finalizar
                 </li>
-                <li className="cursor-pointer hover:bg-gray-200">Editar</li>
+                <li className="cursor-pointer hover:bg-neutral-gray">Editar</li>
                 <li 
-                  className="cursor-pointer hover:bg-gray-200"
+                  className="cursor-pointer hover:bg-neutral-gray"
                   onClick={() => aoZerar()}
                 >Zerar
                 </li>
@@ -100,10 +101,10 @@ function aoZerar() {
           )}
         </div>
       </header>
-      
-      <ul className="flex-col">
+
+      <ul className="flex flex-col grow justify-between mb-10">
         {list.map((item, index) =>
-          <li className="flex items-center gap-6 mb-5 text-2xl" key={index}>
+          <li className="flex items-center gap-6  text-2xl" key={index}>
             <span onClick={() => aoAlterarPontos("somar", index)}>
               <Add className="cursor-pointer hover:rotate-360 transition-all duration-500 ease-in-out"/>
             </span>
@@ -114,8 +115,8 @@ function aoZerar() {
           </li>
         )}
       </ul>
-
-      <footer className="flex pt-4 text-3xl">
+      
+      <footer className="flex text-3xl">
         <p className="grow">{`Daily: ${dailyPoints.toFixed(1)}`}</p>
         <p>{`Monthly: ${monthlyPoints.toFixed(1)}`}</p>
       </footer>

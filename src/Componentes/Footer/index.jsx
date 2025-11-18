@@ -2,7 +2,7 @@ import logo from '../../assets/Imagens/logo-branco.png';
 
 export default function Footer() {
   return (
-    <footer className="flex items-center justify-between bg-primary-green text-neutral-white h-[120px] w-7xl p-4">
+    <footer className="flex items-center justify-between bg-primary-green text-neutral-white h-[120px] w-full p-4">
       <p className=''>Desenvolvido por Leandro Souza</p>
       <img 
         src={logo} 
