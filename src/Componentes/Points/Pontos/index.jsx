@@ -73,7 +73,7 @@ function aoZerar() {
   return (
     <div className="bg-dark-purple rounded-3xl text-neutral-white p-10 flex flex-col">
 
-      <header className="flex mb-10 items-center relative">
+      <header className="flex mb-10 items-center relative z-0">
         <h2 className="text-4xl font-bold grow text-center ml-8">
           Seus Pontos
         </h2>

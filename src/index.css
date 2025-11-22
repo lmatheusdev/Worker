@@ -12,6 +12,7 @@
   --color-primary-yellow: #FFB60C;
   --color-primary-blue: #1E73BE;
   --color-primary-purple: #BD00CE;
+  --color-primary-gray: #6B7280;
    /* Secondary colors */
   --color-secondary-green: #00ee91;
   --color-secondary-purple: #a4367f;
@@ -20,6 +21,7 @@
   --color-tertiary-purple: #520e38;
   /* dark colors */
   --color-dark-purple: #370020;
+  --color-dark-green: #0d2c35;
   /* background */
   --background-image: url('../assets/imagens/points.png');
 }

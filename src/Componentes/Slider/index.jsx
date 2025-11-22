@@ -53,8 +53,8 @@ export default function Slider() {
         .custom-swiper .swiper-button-prev {
           width: 2rem;
           height: 2rem;
-          color: white;
-          background-color: var(--color-neutral-gray);
+          color: var(--color-neutral-green);
+          background-color: var(--color-primary-gray);
           border-radius: 9999px;
           padding: 0.5rem;
           opacity: 0;

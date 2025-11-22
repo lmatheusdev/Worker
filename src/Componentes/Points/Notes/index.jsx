@@ -78,7 +78,7 @@ export default function Notes() {
 
       {modalAberta && (
         <div 
-            className="fixed inset-0 backdrop-blur-xs flex items-center justify-center"
+            className="fixed inset-0 backdrop-blur-xs flex items-center justify-center z-10"
             onClick={() => setModalAberta(false)}
         >
           <div 
