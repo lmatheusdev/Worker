@@ -8,7 +8,7 @@ export default function Fieldset({ title, type, marginBottom }) {
         id={type} 
         name={type} 
         required 
-        className="bg-neutral-white w-[325px] rounded-lg px-3 py-1 focus:outline-none focus:ring-2 focus:ring-primary-green"
+        className="bg-neutral-white w-[370px] rounded-lg px-3 py-1 focus:outline-none focus:ring-2 focus:ring-primary-green"
       />
     </fieldset>
   );
