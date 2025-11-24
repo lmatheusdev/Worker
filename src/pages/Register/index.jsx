@@ -39,7 +39,7 @@ export default function Register() {
           <Fieldset title="Email:" type="email" marginBottom="mb-6"/>
           <Fieldset title="Senha:" type="password" marginBottom="mb-6"/>
 
-          <ButtonAuth type="submit">Login</ButtonAuth>
+          <ButtonAuth type="submit">Cadastrar-se</ButtonAuth>
         </form>
 
         <FooterAuth 

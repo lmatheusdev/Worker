@@ -12,6 +12,8 @@ export default function Notes() {
     console.log(notasSalvas);
     if (notasSalvas) {
       setNotas(JSON.parse(notasSalvas));
+    } else {
+      setNotas(["","","","",""]);
     }
   },[]);
 
