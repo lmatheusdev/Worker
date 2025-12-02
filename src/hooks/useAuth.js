@@ -39,9 +39,6 @@ export const useAuth = () => {
       existingUsers.push(newUser)
       localStorage.setItem('auth_users', JSON.stringify(existingUsers))
       
-      setUser(newUser)
-      localStorage.setItem('auth_user', JSON.stringify(newUser))
-      
       return { success: true, user: newUser }
     } catch (error) {
       return { success: false, error: error.message }

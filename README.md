@@ -1,16 +1,27 @@
-# React + Vite
+# Worker
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## uma ferramenta corporativa criada para otimizar a rotina interna e centralizar sistemas usados pelos colaboradores
 
-Currently, two official plugins are available:
+ Trabalho atualmente em um provedor de internet e percebi que diversos setores utilizam várias ferramentas separadas, o que gera perda de tempo buscando links, acessos e informações. Para resolver esse problema, iniciei o desenvolvimento do Worker, centralizando tudo em uma única aplicação.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 O que o Worker já faz
 
-## React Compiler
+  • Login personalizado por setor, trazendo mais segurança e experiência focada no usuário.
+  • Centralização de ferramentas em uma única página, organizadas em cards filtráveis.
+  • Bloco de notas interno, para registrar rapidamente tarefas e detalhes importantes.
+  • Gestão de pontos, permitindo visualizar pontos diários e a média mensal do colaborador.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🧠 Técnologias
 
-## Expanding the ESLint configuration
+  • React + Vite para uma SPA moderna e performática.
+  • TailwindCSS para ganho de produtividade e consistência visual.
+  • React Router DOM com ProtectedRoute para controle de rotas protegidas.
+  • useAuth Hook personalizado, gerenciando autenticação e persistência no localStorage.
+  • Framer Motion para animações suaves e modernas.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 📌 Próximos passos
+
+  • Filtro avançado por setor.
+  • Versão responsiva (tablet e mobile).
+  • Evolução do sistema de login, com persistência em banco de dados e gestão de permissões.
+  • Chat interno do Service Desk para dúvidas corporativas.
