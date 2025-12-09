@@ -33,3 +33,5 @@ export const Del = ({className}) => <img src="icons/del.png" className={classNam
 export const Options = ({className}) => <img src="icons/options.png" className={className}/>
 
 export const Plans = () => <img src="icons/plans.png"/>
+
+export const Send = ({className}) => <img src="icons/send.png" className={className}/>

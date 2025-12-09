@@ -1,4 +1,5 @@
 import logo from "../../assets/Imagens/chat_logo.png";
+import { Send } from "../Icons";
 import Modal from "../Modal";
 
 export default function Chat({ aoFechar, aoAbrir, open }) {
@@ -16,16 +17,31 @@ export default function Chat({ aoFechar, aoAbrir, open }) {
     
       <Modal open={open} aoFechar={aoFechar} type="chat">
           <div 
-            className="fixed overflow-hidden bg-neutral-white text-white rounded-xl w-[400px] h-[600px] right-35 bottom-20 shadow-xl"
+            className="fixed flex flex-col overflow-hidden bg-neutral-white text-white rounded-xl w-[400px] h-[600px] right-35 bottom-20 shadow-xl"
             onClick={(e) => e.stopPropagation()}
           >
-            <header className="flex items-center justify-center w-full h-[100px] bg-primary-green">
-              <h2 className="text-2xl font-bold mb-2 text-center">Chat Assistente</h2>
+            <header className="flex items-center justify-center w-full h-20 bg-primary-green ">
+              <h2 className="text-2xl font-bold  text-center">Chat Assistente</h2>
             </header>
 
-            <div className="flex justify-end">
-              
-            </div>
+            <section className="flex flex-col grow w-full p-4 gap-4 overflow-y-scroll">
+                <div className="bg-primary-green max-w-fit mr-auto rounded-md p-2">
+                  <p>Olá! Sou seu assistente virtual. <br/>
+                    Como posso ajudar?</p>
+                </div>
+                <div className="bg-primary-green max-w-fit ml-auto rounded-md p-2 ">
+                  <p>Sou o usuário.<br/>
+                    E minha pergunta estará aqui!</p>
+                </div>
+                  
+            </section>
+
+            <footer className="flex w-full border-t-2 border-primary-green py-2 gap-4 justify-center items-center">
+              <textarea className="bg-primary-green border-0 w-[300px] h-[50px] px-2 rounded-md focus:outline-secondary-green">
+
+              </textarea>
+              <Send className="w-10 h-10  p-1 bg-primary-green rounded-[50%] hover:scale-110 transition-all duration-300"/>
+            </footer>
           </div>
       </Modal>
     </>
