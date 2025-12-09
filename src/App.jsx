@@ -1,4 +1,6 @@
+import { useState } from "react"
 import Card from "./Componentes/Card"
+import Chat from "./Componentes/Chat"
 import Container from "./Componentes/Container"
 import Footer from "./Componentes/Footer"
 import Main from "./Componentes/Main"
@@ -8,6 +10,9 @@ import Slider from "./Componentes/Slider"
 
 
 function App() {
+
+  const [modalChat, setModalChat] = useState(false);
+  const [modalNotes, setModalNotes] = useState(false);
 
   const cards = [
   {header: "Home", color: 1},
@@ -43,6 +48,7 @@ function App() {
       <Main>
         <Navbar/>
         <Slider/>
+        <Chat aoFechar={() => setModalChat(false)} aoAbrir={() => setModalChat(true)} open={modalChat}/>
         <section className="grid grid-cols-3 items-stretch ">
           {cards.map((card, index) => (
             <Card key={index} color={card.color}>
@@ -64,7 +70,7 @@ function App() {
           ))}
         </section>
         <section>
-          <Points/>
+          <Points aoFechar={() => setModalNotes(false)} aoAbrir={() => setModalNotes(true)} open={modalNotes}/>
         </section>
       </Main>
       <Footer/>

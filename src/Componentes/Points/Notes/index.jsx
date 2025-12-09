@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-export default function Notes() {
+import Modal from "../../Modal";
+export default function Notes({ aoAbrir, aoFechar, open }) {
 
   const [notas, setNotas] = useState([]);
-  const [modalAberta, setModalAberta] = useState(false);
   const [texto, setTexto] = useState("");
   const [linhaSelecionada, setLinhaSelecionada] = useState(null);
 
@@ -23,28 +23,10 @@ export default function Notes() {
     }
   }, [notas]);
 
-  // Evita o scroll do body quando a modal está aberta.
-  useEffect(() => {
-    if (modalAberta) document.body.style.overflow = "hidden";
-    else document.body.style.overflow = "auto";
-  }, [modalAberta]);
-
-  useEffect(()=>{
-      if (modalAberta === false) return;
-      const handleKeyDown = (e) => {
-        if (e.key === "Escape") {
-          setModalAberta(false);
-        }
-      };
-      window.addEventListener('keydown', handleKeyDown);
-      return () => window.removeEventListener('keydown', handleKeyDown);
-  },[modalAberta]);
-  
-
   const abrirModal = (index) => {
   setLinhaSelecionada(index);
   setTexto(notas[index] || "");
-  setModalAberta(true);
+  aoAbrir();
   };
 
  
@@ -53,7 +35,7 @@ export default function Notes() {
   const novasNotas = [...notas];
   novasNotas[linhaSelecionada] = texto.slice(0, 150);
   setNotas(novasNotas);
-  setModalAberta(false);
+  aoFechar();
   };
   return (
     <div className="w-30%">
@@ -78,14 +60,9 @@ export default function Notes() {
       </div>
 
 
-      {modalAberta && (
-        <div 
-            className="fixed inset-0 backdrop-blur-xs flex items-center justify-center z-10"
-            onClick={() => setModalAberta(false)}
-        >
+      <Modal open={open} aoFechar={aoFechar} overLayClassName="backdrop-blur-xs flex items-center justify-center">
           <div 
             className="bg-secondary-purple text-white p-3 rounded-xl w-[350px] shadow-xl"
-            onClick={(e) => e.stopPropagation()}
           >
             <h2 className="text-2xl font-bold mb-2 text-center">Nota</h2>
             <textarea
@@ -106,8 +83,7 @@ export default function Notes() {
               </button>
             </div>
           </div>
-        </div>
-      )}
+    </Modal>
     </div>
   );
 }
