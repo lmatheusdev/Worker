@@ -82,7 +82,7 @@ export default function Chat({ aoFechar, aoAbrir, open }) {
               ))}
             </section>
 
-            <footer className="flex w-full border-t-2 border-primary-green py-2 gap-4 justify-center items-center">
+            <footer className="flex bg-primary-green w-full border-t-2 border-primary-green py-2 gap-4 justify-center items-center">
               <textarea 
                 autoFocus
                 value={message}
