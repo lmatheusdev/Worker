@@ -1,5 +1,7 @@
-import { useCallback, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
+import ReactMarkdown from "react-markdown";
 import logo from "../../assets/Imagens/chat_logo.png";
+import { getSessionId } from "../../utils/session";
 import { Send } from "../Icons";
 import Modal from "../Modal";
 
@@ -7,6 +9,16 @@ export default function Chat({ aoFechar, aoAbrir, open }) {
 
   const [message, setMessage] = useState("");
   const [chatHistory, setChatHistory] = useState([]);
+  const messagesEndRef = useRef(null);
+  const id = getSessionId();
+
+  const scrollToBottom = () => {
+  messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+};
+
+useEffect(() => {
+  scrollToBottom();
+}, [chatHistory]);
 
   const handleSend = useCallback(async () => {
   const currentMessage = message;
@@ -26,7 +38,7 @@ export default function Chat({ aoFechar, aoAbrir, open }) {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ message: currentMessage }),
+      body: JSON.stringify({ message: currentMessage, session_id: id }),
     });
 
     const data = await res.json();
@@ -38,7 +50,7 @@ export default function Chat({ aoFechar, aoAbrir, open }) {
   } catch (err) {
     console.error("Erro ao enviar mensagem:", err);
   }
-}, [message]);
+}, [message, id]);
 
   const handleKeyDown = (e) => {
   if (e.key === "Enter" && !e.shiftKey) {
@@ -77,9 +89,10 @@ export default function Chat({ aoFechar, aoAbrir, open }) {
                     "bg-primary-blue max-w-fit ml-auto rounded-md p-2" : 
                     "bg-primary-green max-w-fit mr-auto rounded-md p-2"}
                 >
-                  {msg.text}
+                  <ReactMarkdown>{msg.text}</ReactMarkdown>
                 </div>
               ))}
+              <div ref={messagesEndRef} />
             </section>
 
             <footer className="flex bg-primary-green w-full border-t-2 border-primary-green py-2 gap-4 justify-center items-center">

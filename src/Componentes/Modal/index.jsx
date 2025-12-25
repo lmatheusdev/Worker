@@ -26,6 +26,7 @@ export default function Modal({ children, open, overLayClassName ="", aoFechar, 
       className={`fixed inset-0 z-10 ${overLayClassName}`}
       onClick={() => aoFechar()}
     >
+      
       <div 
         onClick={(e) => e.stopPropagation()}
       >
