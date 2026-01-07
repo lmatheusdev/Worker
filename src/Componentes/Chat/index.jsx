@@ -11,46 +11,47 @@ export default function Chat({ aoFechar, aoAbrir, open }) {
   const [chatHistory, setChatHistory] = useState([]);
   const messagesEndRef = useRef(null);
   const id = getSessionId();
+  const API_URL = import.meta.env.VITE_API_URL;
 
   const scrollToBottom = () => {
   messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
-};
+  };
 
-useEffect(() => {
-  scrollToBottom();
-}, [chatHistory]);
+  useEffect(() => {
+    scrollToBottom();
+  }, [chatHistory]);
 
   const handleSend = useCallback(async () => {
-  const currentMessage = message;
+    const currentMessage = message;
 
-  if (!currentMessage.trim()) return;
+    if (!currentMessage.trim()) return;
 
-  setMessage("");
-
-  setChatHistory(prev => [
-    ...prev,
-    { from: "user", text: currentMessage },
-  ]);
-
-  try {
-    const res = await fetch("http://localhost:8000/api/chat/send", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ message: currentMessage, session_id: id }),
-    });
-
-    const data = await res.json();
+    setMessage("");
 
     setChatHistory(prev => [
       ...prev,
-      { from: "agent", text: data.reply },
+      { from: "user", text: currentMessage },
     ]);
-  } catch (err) {
-    console.error("Erro ao enviar mensagem:", err);
-  }
-}, [message, id]);
+
+    try {
+      const res = await fetch(`${API_URL}/api/chat/send`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ message: currentMessage, session_id: id }),
+      });
+
+      const data = await res.json();
+
+      setChatHistory(prev => [
+        ...prev,
+        { from: "agent", text: data.reply },
+      ]);
+    } catch (err) {
+      console.error("Erro ao enviar mensagem:", err);
+    }
+  },[message, id, API_URL]);
 
   const handleKeyDown = (e) => {
   if (e.key === "Enter" && !e.shiftKey) {

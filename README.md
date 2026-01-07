@@ -1,4 +1,4 @@
-# Worker
+# Worker Frontend
 
 ## uma ferramenta corporativa criada para otimizar a rotina interna e centralizar sistemas usados pelos colaboradores
 
@@ -21,7 +21,5 @@
 
 ## 📌 Próximos passos
 
-  • Filtro avançado por setor.
   • Versão responsiva (tablet e mobile).
   • Evolução do sistema de login, com persistência em banco de dados e gestão de permissões.
-  • Chat interno do Service Desk para dúvidas corporativas.
