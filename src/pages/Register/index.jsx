@@ -1,4 +1,4 @@
-import registerBanner from '@/assets/imagens/register_page.png';
+import registerBanner from '@/assets/imagens/register.png';
 import AuthContainer from '@/Componentes/AuthContainer';
 import ButtonAuth from '@/Componentes/ButtonAuth';
 import Fieldset from '@/Componentes/Fieldset';
