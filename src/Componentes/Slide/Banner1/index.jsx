@@ -1,5 +1,5 @@
-import banner from "@/assets/imagens/slide1.png";
 import { motion } from "framer-motion";
+import banner from "/imagens/slide1.png";
 
  
 export default function Banner1({ isActive }) {

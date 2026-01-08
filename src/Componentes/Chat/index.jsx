@@ -1,9 +1,9 @@
-import logo from "@/assets/imagens/chat_logo.png";
 import { getSessionId } from "@/utils/session";
 import { useCallback, useEffect, useRef, useState } from "react";
 import ReactMarkdown from "react-markdown";
 import { Send } from "../Icons";
 import Modal from "../Modal";
+import logo from "/imagens/chat_logo.png";
 
 export default function Chat({ aoFechar, aoAbrir, open }) {
 

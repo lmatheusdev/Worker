@@ -1,4 +1,4 @@
-import logo from '@/assets/imagens/logo-branco.png';
+import logo from '/imagens/logo-branco.png';
 
 export default function Footer() {
   return (

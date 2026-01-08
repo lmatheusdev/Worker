@@ -1,6 +1,6 @@
-import bgImage from '@/assets/imagens/points.png';
 import Notes from './Notes';
 import Pontos from './Pontos';
+import bgImage from '/imagens/points.png';
 
 export default function Points({aoAbrir, aoFechar, open}) {
   return (

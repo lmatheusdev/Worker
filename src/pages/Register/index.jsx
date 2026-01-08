@@ -1,4 +1,3 @@
-import registerBanner from '@/assets/imagens/register.png';
 import AuthContainer from '@/Componentes/AuthContainer';
 import ButtonAuth from '@/Componentes/ButtonAuth';
 import Fieldset from '@/Componentes/Fieldset';
@@ -6,6 +5,7 @@ import FooterAuth from '@/Componentes/FooterAuth';
 import Typography from '@/Componentes/Typography';
 import { useAuth } from '@/hooks/useAuth';
 import { useNavigate } from 'react-router-dom';
+import registerBanner from '/imagens/register.png';
 
 export default function Register() {
 
