@@ -1,4 +1,4 @@
-import bgImage from '../../assets/imagens/points.png';
+import bgImage from '@/assets/imagens/points.png';
 import Notes from './Notes';
 import Pontos from './Pontos';
 

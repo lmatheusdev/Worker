@@ -1,6 +1,6 @@
+import { useAuth } from "@/hooks/useAuth";
 import { useEffect } from "react";
 import { useNavigate } from "react-router";
-import { useAuth } from "../../hooks/useAuth";
 import Spinner from "../Spinner";
 
 

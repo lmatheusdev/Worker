@@ -1,5 +1,5 @@
+import { Add, Del, Options } from "@/Componentes/Icons";
 import { useEffect, useState } from "react";
-import { Add, Del, Options } from "../../Icons";
 
 export default function Pontos() {
 

@@ -1,11 +1,11 @@
+import loginBanner from '@/assets/Imagens/login_page.png';
+import AuthContainer from '@/Componentes/AuthContainer';
+import ButtonAuth from '@/Componentes/ButtonAuth';
+import Fieldset from '@/Componentes/Fieldset';
+import FooterAuth from '@/Componentes/FooterAuth';
+import Typography from '@/Componentes/Typography';
+import { useAuth } from '@/hooks/useAuth';
 import { useNavigate } from 'react-router-dom';
-import loginBanner from '../../assets/Imagens/login_page.png';
-import AuthContainer from '../../Componentes/AuthContainer';
-import ButtonAuth from '../../Componentes/ButtonAuth';
-import Fieldset from '../../Componentes/Fieldset';
-import FooterAuth from '../../Componentes/FooterAuth';
-import Typography from '../../Componentes/Typography';
-import { useAuth } from '../../hooks/useAuth';
 
 export default function Login() {
 

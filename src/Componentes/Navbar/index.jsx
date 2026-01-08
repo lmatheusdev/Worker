@@ -1,6 +1,6 @@
+import mini from "@/assets/Imagens/logo-mini.png";
+import logo from "@/assets/Imagens/logo.png";
 import { Link } from "react-router-dom";
-import mini from "../../assets/Imagens/logo-mini.png";
-import logo from "../../assets/Imagens/logo.png";
 
 export default function Navbar() {
 

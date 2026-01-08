@@ -1,5 +1,5 @@
+import Modal from "@/Componentes/Modal";
 import { useEffect, useState } from "react";
-import Modal from "../../Modal";
 export default function Notes({ aoAbrir, aoFechar, open }) {
 
   const [notas, setNotas] = useState([]);

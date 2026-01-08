@@ -1,7 +1,7 @@
+import logo from "@/assets/Imagens/chat_logo.png";
+import { getSessionId } from "@/utils/session";
 import { useCallback, useEffect, useRef, useState } from "react";
 import ReactMarkdown from "react-markdown";
-import logo from "../../assets/Imagens/chat_logo.png";
-import { getSessionId } from "../../utils/session";
 import { Send } from "../Icons";
 import Modal from "../Modal";
 
