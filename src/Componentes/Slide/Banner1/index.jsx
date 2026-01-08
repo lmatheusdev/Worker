@@ -1,4 +1,4 @@
-import banner from "@/assets/Imagens/slide1.png";
+import banner from "@/assets/imagens/slide1.png";
 import { motion } from "framer-motion";
 
  

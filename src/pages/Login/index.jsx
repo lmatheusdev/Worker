@@ -1,4 +1,4 @@
-import loginBanner from '@/assets/Imagens/login_page.png';
+import loginBanner from '@/assets/imagens/login_page.png';
 import AuthContainer from '@/Componentes/AuthContainer';
 import ButtonAuth from '@/Componentes/ButtonAuth';
 import Fieldset from '@/Componentes/Fieldset';

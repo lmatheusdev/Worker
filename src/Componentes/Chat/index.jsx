@@ -1,4 +1,4 @@
-import logo from "@/assets/Imagens/chat_logo.png";
+import logo from "@/assets/imagens/chat_logo.png";
 import { getSessionId } from "@/utils/session";
 import { useCallback, useEffect, useRef, useState } from "react";
 import ReactMarkdown from "react-markdown";
