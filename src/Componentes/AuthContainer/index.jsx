@@ -8,7 +8,7 @@ export default function AuthContainer({ children, bannerSrc }) {
             h-screen w-[50vw]
           '/>
       </figure>
-      <section className='flex w-[50vw] flex-col p-8'>
+      <section className='flex w-[50vw] h-screen flex-col p-8'>
         {children}
       </section>
     </div>

@@ -9,7 +9,7 @@ export default function Navbar() {
     {name: "Servicos", href: "#"},
     {name: "Sobre", href: "#"},
     {name: "Contato", href: "#"},
-    {name: "Blog", href: "#"},
+    {name: "App RDF", href: "#"},
     {name: "Logout", href: "/auth/logout"}
   ];
 

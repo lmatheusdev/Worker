@@ -16,28 +16,28 @@ function App() {
 
   const cards = [
   {header: "Home", color: 1},
-  {header: "Analysis", color: 2}, 
-  {header: "Daily apps", color: 3},
-  {header: "Updates", color: 2},
-  {header: "Utilities", color: 3},
-  {header: "Study", color: 1},
+  {header: "Análise", color: 2}, 
+  {header: "Utilitários", color: 3},
+  {header: "Tutoriais", color: 2},
+  {header: "Outros", color: 3},
+  {header: "Academia", color: 1},
 ]
 
   const icons = [
     { name: "hubsoft", card: "Home", link: "https://rdfnet.hubsoft.com.br/dashboard"}, 
     { name: "callcenter", card: "Home", link: "https://rdfnet.com.br/callcenter/"}, 
     { name: "chatmix", card: "Home", link: "https://srv2.chatmix.com.br"}, 
-    { name: "sat", card:"Analysis", link: "https://rdfnet.com.br/sat/index.html"}, 
-    { name: "datacom", card:"Analysis", link: "https://187.109.80.53:8101/"}, 
-    { name: "smartolt", card:"Analysis", link: "https://rdfnet.smartolt.com/"}, 
-    { name: "grafana", card:"Analysis", link: "http://grafana.rdfnet.com.br:3000/login"}, 
-    { name: "uisp", card:"Analysis", link: "https://uisp.rdfnet.com.br/"}, 
-    { name: "spotify", card:"Daily apps", link: "https://open.spotify.com/intl-pt"}, 
-    { name: "fiberschool", card:"Study", link: "https://academia.rdftelecom.com.br/area/vitrine"},
-    { name: "trello", card:"Daily apps", link: "https://trello.com/pt-BR"},
-    { name: "chatgpt", card:"Daily apps", link: "https://chatgpt.com/"},
-    { name: "gemini", card:"Daily apps", link: "https://gemini.google.com/?hl=pt-BR"},
-    { name: "youtube", card:"Daily apps", link: "https://www.youtube.com/"},
+    { name: "sat", card:"Análise", link: "https://rdfnet.com.br/sat/index.html"}, 
+    { name: "datacom", card:"Análise", link: "https://187.109.80.53:8101/"}, 
+    { name: "smartolt", card:"Análise", link: "https://rdfnet.smartolt.com/"}, 
+    { name: "grafana", card:"Análise", link: "http://grafana.rdfnet.com.br:3000/login"},
+    { name: "spotify", card:"Utilitários", link: "https://open.spotify.com/intl-pt"}, 
+    { name: "fiberschool", card:"Academia", link: "https://academia.rdftelecom.com.br/area/vitrine"},
+    { name: "trello", card:"Utilitários", link: "https://trello.com/pt-BR"},
+    { name: "chatgpt", card:"Utilitários", link: "https://chatgpt.com/"},
+    { name: "gemini", card:"Utilitários", link: "https://gemini.google.com/?hl=pt-BR"},
+    { name: "youtube", card:"Utilitários", link: "https://www.youtube.com/"},
+    { name: "rdf", card:"Tutoriais", link: "https://rdfnet.com.br/tutoriais/"},
   ];
 
   // estilo dos icones

@@ -72,14 +72,14 @@ export default function Chat({ aoFechar, aoAbrir, open }) {
     
       <Modal open={open} aoFechar={aoFechar} type="chat">
           <div 
-            className="fixed flex flex-col overflow-hidden bg-neutral-white text-white rounded-xl w-[400px] h-[600px] right-35 bottom-20 shadow-xl"
+            className="fixed flex flex-col overflow-hidden bg-neutral-white text-white rounded-xl max-w-full w-[30vw] h-[70vh] right-35 bottom-20 shadow-xl overflow-x-hidden"
             onClick={(e) => e.stopPropagation()}
           >
-            <header className="flex items-center justify-center w-full h-20 bg-primary-green ">
+            <header className="flex items-center justify-center w-full h-20 bg-primary-green">
               <h2 className="text-2xl font-bold  text-center">Chat Assistente</h2>
             </header>
 
-            <section className="flex flex-col grow w-full p-4 gap-4 overflow-y-scroll">
+            <section className="flex flex-col w-full h-full p-4 gap-4 overflow-y-scroll">
               <div className="bg-primary-green max-w-fit mr-auto rounded-md p-2">
                     Olá, Sou seu assistente virtual, como posso ajudar?
               </div>
@@ -96,16 +96,16 @@ export default function Chat({ aoFechar, aoAbrir, open }) {
               <div ref={messagesEndRef} />
             </section>
 
-            <footer className="flex bg-primary-green w-full border-t-2 border-primary-green py-2 gap-4 justify-center items-center">
+            <footer className="flex bg-primary-green w-full border-t-2 border-primary-green p-2 gap-4 justify-center items-center">
               <textarea 
                 autoFocus
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
                 onKeyDown={handleKeyDown}
                 placeholder="Digite sua mensagem..."
-                className="bg-primary-blue border-0 w-[300px] h-[50px] px-2 rounded-md focus:outline-primary-green"/>
+                className="bg-primary-blue border-0 w-full h-[50px] px-2 rounded-md focus:outline-primary-green"/>
               <button onClick={handleSend}> 
-                <Send className="w-10 h-10  p-1 bg-primary-blue rounded-[50%] hover:scale-110 transition-all duration-300"/>
+                <Send className="w-10 h-10 p-1 bg-primary-blue rounded-[50%] hover:scale-110 transition-all duration-300"/>
               </button>
             </footer>
           </div>
