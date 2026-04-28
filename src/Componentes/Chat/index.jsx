@@ -1,14 +1,18 @@
 import { getSessionId } from "@/utils/session";
+import { AnimatePresence, motion } from "framer-motion";
 import { useCallback, useEffect, useRef, useState } from "react";
 import ReactMarkdown from "react-markdown";
 import { Send } from "../Icons";
 import Modal from "../Modal";
+import TypingLoader from "../TypingLoader";
 import logo from "/imagens/chat_logo.png";
 
 export default function Chat({ aoFechar, aoAbrir, open }) {
 
   const [message, setMessage] = useState("");
   const [chatHistory, setChatHistory] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+  const [showSlowMessage, setShowSlowMessage] = useState(false);
   const messagesEndRef = useRef(null);
   const id = getSessionId();
   const API_URL = import.meta.env.VITE_API_URL;
@@ -27,11 +31,14 @@ export default function Chat({ aoFechar, aoAbrir, open }) {
     if (!currentMessage.trim()) return;
 
     setMessage("");
+    setIsLoading(true);
 
     setChatHistory(prev => [
       ...prev,
       { from: "user", text: currentMessage },
     ]);
+
+    const timer = setTimeout(() => setShowSlowMessage(true), 8000);
 
     try {
       const res = await fetch(`${API_URL}/api/chat/send`, {
@@ -50,6 +57,10 @@ export default function Chat({ aoFechar, aoAbrir, open }) {
       ]);
     } catch (err) {
       console.error("Erro ao enviar mensagem:", err);
+    } finally {
+      setIsLoading(false);
+      setShowSlowMessage(false);
+      clearTimeout(timer);
     }
   },[message, id, API_URL]);
 
@@ -79,22 +90,53 @@ export default function Chat({ aoFechar, aoAbrir, open }) {
               <h2 className="text-2xl font-bold  text-center">Chat Assistente</h2>
             </header>
 
-            <section className="flex flex-col w-full h-full p-4 gap-4 overflow-y-scroll">
-              <div className="bg-primary-green max-w-fit mr-auto rounded-md p-2">
-                    Olá, Sou seu assistente virtual, como posso ajudar?
-              </div>
-              {chatHistory.map((msg, index) => (
-                <div
-                  key={index}
-                  className={msg.from === "user" ? 
-                    "bg-primary-blue max-w-fit ml-auto rounded-md p-2" : 
-                    "bg-primary-green max-w-fit mr-auto rounded-md p-2"}
+            <AnimatePresence mode="popLayout">
+              <section className="flex flex-col w-full h-full p-4 gap-4 overflow-y-scroll">
+                <motion.div 
+                  className="bg-primary-green max-w-fit mr-auto rounded-md p-2"
+                  initial={{ opacity: 0, y: 10, scale: 0.95 }}
+                  animate={{ opacity: 1, y: 0, scale: 1 }}
+                  transition={{ duration: 0.3 }}>
+                      Olá, Sou seu assistente virtual, como posso ajudar?
+                </motion.div>
+                {chatHistory.map((msg, index) => (
+                  <motion.div
+                    initial={{ opacity: 0, y: 10, scale: 0.95 }}
+                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                    transition={{ duration: 0.3 }}
+                    key={index}
+                    className={msg.from === "user" ? 
+                      "bg-primary-blue max-w-fit ml-auto rounded-md p-2" : 
+                      "bg-primary-green max-w-fit mr-auto rounded-md p-2"}
+                  >
+                    <ReactMarkdown>{msg.text}</ReactMarkdown>
+                  </motion.div>
+                ))}
+                <div ref={messagesEndRef} />
+              </section>
+              {isLoading && (
+                <motion.div
+                  key="loader-container"
+                  initial={{ opacity: 0, x: -10 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: -10 }}
+                  className="flex flex-col items-start"
                 >
-                  <ReactMarkdown>{msg.text}</ReactMarkdown>
-                </div>
-              ))}
-              <div ref={messagesEndRef} />
-            </section>
+                  <TypingLoader />
+                  <AnimatePresence>
+                    {showSlowMessage && (
+                      <motion.span
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        className="text-primary-green font-medium ml-2"
+                      >
+                        O chat está pensando.. Aguarde um pouco!
+                      </motion.span>
+                    )}
+                  </AnimatePresence>
+                </motion.div>
+              )}
+            </AnimatePresence>
 
             <footer className="flex bg-primary-green w-full border-t-2 border-primary-green p-2 gap-4 justify-center items-center">
               <textarea 

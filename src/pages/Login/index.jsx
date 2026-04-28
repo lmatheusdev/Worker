@@ -28,10 +28,10 @@ export default function Login() {
     <AuthContainer bannerSrc={loginBanner}>
         <header className='flex flex-col items-center justify-center mb-8 text-neutral-white'>
           <Typography variant='h1' className='mb-32 font-bold'>Login</Typography>
-          <Typography variant='h2' className='mb-25'>Boas-vindas! Faça o seu login.</Typography>
+          <Typography variant='h2' className='mb-12'>Boas-vindas! Faça o seu login.</Typography>
         </header>
         
-        <form className='flex flex-col items-center' action={onSubmit}>
+        <form className='flex flex-col items-center ' action={onSubmit}>
           <Fieldset title="Email ou usuario:" type="email" marginBottom="mb-6"/>
 
           <Fieldset title="Senha:" type="password" marginBottom="mb-6"/>

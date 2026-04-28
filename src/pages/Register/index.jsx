@@ -30,7 +30,7 @@ export default function Register() {
     <AuthContainer bannerSrc={registerBanner}>
         <header className='flex flex-col items-center justify-center mb-8 text-neutral-white'>
           <Typography variant='h1' className='mb-32 font-bold'>Cadastro</Typography>
-          <Typography variant='h2' className='mb-25'>Olá! Preencha seus dados</Typography>
+          <Typography variant='h2' className='mb-12'>Olá! Preencha seus dados</Typography>
         </header>
         
         <form className='flex flex-col items-center' action={onSubmit}>
