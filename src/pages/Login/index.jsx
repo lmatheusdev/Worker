@@ -32,7 +32,7 @@ export default function Login() {
         </header>
         
         <form className='flex flex-col items-center ' action={onSubmit}>
-          <Fieldset title="Email ou usuario:" type="email" marginBottom="mb-6"/>
+          <Fieldset title="Email:" type="email" marginBottom="mb-6"/>
 
           <Fieldset title="Senha:" type="password" marginBottom="mb-6"/>
 

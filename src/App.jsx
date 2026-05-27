@@ -19,7 +19,7 @@ function App() {
   {header: "Análise", color: 2}, 
   {header: "Utilitários", color: 3},
   {header: "Tutoriais", color: 2},
-  {header: "Outros", color: 3},
+  {header: "Almoxarifado", color: 3},
   {header: "Academia", color: 1},
 ]
 
@@ -38,6 +38,10 @@ function App() {
     { name: "gemini", card:"Utilitários", link: "https://gemini.google.com/?hl=pt-BR"},
     { name: "youtube", card:"Utilitários", link: "https://www.youtube.com/"},
     { name: "rdf", card:"Tutoriais", link: "https://rdfnet.com.br/tutoriais/"},
+    { name: "predio", card:"Almoxarifado", link: "https://gevcjtm.com/"},
+    { name: "prato", card:"Almoxarifado", link: "https://meal-scribe-sync.lovable.app/"},
+    { name: "frota", card:"Almoxarifado", link: "https://controldefrota.lovable.app/auth"},
+    { name: "compras", card:"Almoxarifado", link: "https://paymsg-gen.lovable.app/auth"},
   ];
 
   // estilo dos icones

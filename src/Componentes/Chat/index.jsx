@@ -74,7 +74,7 @@ export default function Chat({ aoFechar, aoAbrir, open }) {
   return(
     <>
     <div 
-      className="flex justify-center w-20 h-20 rounded-[50%] bg-primary-green 
+      className="flex justify-center w-20 h-20 z-10 rounded-[50%] bg-primary-green 
         fixed bottom-10 right-10 hover:cursor-pointer hover:scale-120 transition-all duration-300"
       onClick={() => aoAbrir()}
     >
